@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/valentines/welcomepage/static/css/main.54a13eee.css",
-    "main.js": "/valentines/welcomepage/static/js/main.2da8a54c.js",
+    "main.js": "/valentines/welcomepage/static/js/main.66a1eaa3.js",
     "static/js/206.2ed40338.chunk.js": "/valentines/welcomepage/static/js/206.2ed40338.chunk.js",
     "static/media/image5.gif": "/valentines/welcomepage/static/media/image5.62e2d0621fe57c7a8cff.gif",
     "static/media/image3.gif": "/valentines/welcomepage/static/media/image3.e1c5a03d37fb7241f862.gif",
@@ -11,6 +11,6 @@
   },
   "entrypoints": [
     "static/css/main.54a13eee.css",
-    "static/js/main.2da8a54c.js"
+    "static/js/main.66a1eaa3.js"
   ]
 }
