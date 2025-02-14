@@ -1,11 +1,12 @@
 /* eslint-disable */
 import * as THREE from 'three';
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import './Happy.css';
-import { OrbitControls, useGLTF, Html, useProgress } from '@react-three/drei';
+import { OrbitControls, Html, useProgress } from '@react-three/drei';
 import { motion } from 'framer-motion';
 import { ValentinesCard } from '../card/card';
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { useLocation } from 'react-router-dom';
 
 // Loading Component
@@ -28,14 +29,37 @@ function Loader() {
 
 // Custom Model Component
 function MyModel(props: JSX.IntrinsicElements['group']) {
-  const { scene } = useGLTF('/models/valentinescene10.glb');
-  return <primitive object={scene} {...props} />;
+  const group = useRef<THREE.Group>();
+  const [scene, setScene] = useState<THREE.Group>();
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    const loader = new GLTFLoader();
+    loader.load(
+      process.env.PUBLIC_URL + '/models/valentine.glb',
+      (gltf) => {
+        setScene(gltf.scene);
+        setError(null);
+      },
+      undefined,
+      (error) => {
+        console.error("Error loading GLTF model:", error);
+        setError("Error loading GLTF model: " + (error as Error).message);
+      }
+    );
+  }, []);
+
+  if (error) {
+    return <Html center><div className="error-message">{error}</div></Html>;
+  }
+
+  return scene ? <primitive object={scene} ref={group} {...props} /> : null;
 }
 
 export const Three: React.FC = () => {
+  const [showCard, setShowCard] = useState(true);
   const location = useLocation();
   const { spotifyUrl, spotifyTitle } = location.state || {};
-  const [showCard, setShowCard] = useState(true);
 
   return (
     <motion.div
@@ -45,20 +69,21 @@ export const Three: React.FC = () => {
       transition={{ duration: 5, ease: "easeInOut" }}
     >
       {showCard && <ValentinesCard onClose={() => setShowCard(false)} />}
-      {spotifyUrl && (
-        <div className='spotify-container'>
-          <h2 className='spotify-title'>{spotifyTitle}</h2>
-          <iframe
-            src={spotifyUrl}
-            width="300"
-            height="80"
-            frameBorder="0"
-            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-            loading="lazy"
-          ></iframe>
-        </div>
-      )}
       <div className='three-container'>
+        {spotifyUrl && (
+          <div className='spotify-container'>
+            <h2 className='spotify-title'>{spotifyTitle}</h2>
+            <iframe
+              title="spotify-player"
+              src={spotifyUrl}
+              width="300"
+              height="80"
+              frameBorder="0"
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy"
+            ></iframe>
+          </div>
+        )}
         <Canvas>
           <ambientLight intensity={0.2} />
           <pointLight intensity={5} position={[0, 1, 0.9]} />
