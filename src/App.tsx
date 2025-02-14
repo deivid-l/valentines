@@ -9,15 +9,12 @@ import { AnimatePresence } from 'framer-motion';
 import './App.css';
 
 export const App: React.FC = () => {
-
   const [name, setName] = useState<string>('');
-  const [audio, setAudio] = useState<HTMLAudioElement | null>(null);
-  const [isPlaying, setIsPlaying] = useState<boolean>(false);
 
   return (
     <div className='app-container'>
       <AnimatePresence>
-        <BrowserRouter>
+        <BrowserRouter basename={process.env.PUBLIC_URL}>
           <Routes>
             <Route path="/" element={<WelcomePage name={name} setName={setName} />} />
             <Route path="/home/:randomUrlPart" element={<Home name={name} setName={setName} />} />

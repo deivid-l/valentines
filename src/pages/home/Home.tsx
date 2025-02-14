@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 import { Animator, ScrollContainer, ScrollPage } from 'react-scroll-motion'
 import { batch } from 'react-scroll-motion'
 import { Fade, MoveOut, MoveIn, Sticky } from 'react-scroll-motion'
-import { useNavigate, useParams, useLocation } from 'react-router-dom'
+import { useNavigate, useLocation } from 'react-router-dom'
 
 interface nameProps {
   name: string;
@@ -12,7 +12,6 @@ interface nameProps {
 }
 
 export const Home: React.FC<nameProps> = ( {name, setName} ) => {
-  const { randomUrlPart } = useParams<{ randomUrlPart: string }>();
   const location = useLocation();
   const navigate = useNavigate();
   const [spotifyUrl, setSpotifyUrl] = useState<string | null>(null);
@@ -76,6 +75,7 @@ export const Home: React.FC<nameProps> = ( {name, setName} ) => {
           <div className='spotify-container'>
             <h2>Esta fue la canción que eligió tu enamorado:</h2>
             <iframe
+              title="spotify-embed"
               src={spotifyUrl}
               width="300"
               height="80"

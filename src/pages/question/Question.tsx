@@ -5,7 +5,6 @@ import { Animator, ScrollContainer, ScrollPage } from 'react-scroll-motion';
 import { batch } from 'react-scroll-motion';
 import { Fade, MoveOut, MoveIn, Sticky } from 'react-scroll-motion';
 import { useNavigate, useLocation } from 'react-router-dom';
-import image1 from '../../assets/image1.gif';
 import image2 from '../../assets/image2.gif';
 import image3 from '../../assets/image3.gif';
 import image4 from '../../assets/image4.gif';
@@ -20,7 +19,6 @@ export const Question: React.FC<nameProps> = ({ name, setName }) => {
   const navigate = useNavigate();
   const location = useLocation();
   const [noButtonSize, setNoButtonSize] = useState(1);
-  const [yesButtonPosition, setYesButtonPosition] = useState({ x: 0, y: 0 });
   const [noButtonPosition, setNoButtonPosition] = useState({ x: 0, y: 0 });
   const [spotifyUrl, setSpotifyUrl] = useState<string | null>(null);
 
@@ -69,6 +67,7 @@ export const Question: React.FC<nameProps> = ({ name, setName }) => {
           <div className='spotify-container'>
             <h2 className='spotify-title'>Esta fue la canción que eligió tu enamorado</h2>
             <iframe
+              title="spotify-player"
               src={spotifyUrl}
               width="300"
               height="80"
@@ -79,18 +78,18 @@ export const Question: React.FC<nameProps> = ({ name, setName }) => {
           </div>
         )}
         {/* Floating Images */}
-        <img className="image1-down" src={image5} />
-        <img className="image2-down" src={image2} />
-        <img className="image3-down" src={image3} />
-        <img className="image4-down" src={image4} />
-        <img className="image5-down" src={image5} />
-        <img className="image6-down" src={image2} />
-        <img className="image1" src={image5} />
-        <img className="image2" src={image2} />
-        <img className="image3" src={image3} />
-        <img className="image4" src={image4} />
-        <img className="image5" src={image5} />
-        <img className="image6" src={image2} />
+        <img className="image1-down" src={image5} alt="" />
+        <img className="image2-down" src={image2} alt="" />
+        <img className="image3-down" src={image3} alt="" />
+        <img className="image4-down" src={image4} alt="" />
+        <img className="image5-down" src={image5} alt="" />
+        <img className="image6-down" src={image2} alt="" />
+        <img className="image1" src={image5} alt="" />
+        <img className="image2" src={image2} alt="" />
+        <img className="image3" src={image3} alt="" />
+        <img className="image4" src={image4} alt="" />
+        <img className="image5" src={image5} alt="" />
+        <img className="image6" src={image2} alt="" />
 
         <ScrollContainer>
           <ScrollPage>
