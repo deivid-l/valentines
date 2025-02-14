@@ -1,19 +1,19 @@
-# 💖 Valentine's 3D Website
+# Valentine's 3D Website
 
 A beautiful, interactive 3D Valentine's desktop website featuring a custom Three.js scene, Valentine's card, and smooth animations. Built with **React, Three.js, @react-three/fiber, Framer Motion, and React Scroll Motion**.
 
 ---
 
-## 🚀 Features
+## Features
 
-- 🎨 **3D Valentine's Scene** using Three.js
-- 💌 **Valentine's Card** for that special person
-- 🎭 **Framer Motion Animations** for smooth transitions
-- 🔄 **Scroll-based Effects** for immersive interaction
+- **3D Valentine's Scene** using Three.js
+- **Valentine's Card** for that special person
+- **Framer Motion Animations** for smooth transitions
+- **Scroll-based Effects** for immersive interaction
 
 ---
 
-## 🛠️ Technologies Used
+## Technologies Used
 
 - **React** (Frontend framework)
 - **Three.js** (3D rendering engine)
@@ -24,7 +24,7 @@ A beautiful, interactive 3D Valentine's desktop website featuring a custom Three
 
 ---
 
-## 📦 Installation
+## Installation
 
 1. **Clone the Repository**
 ```sh
@@ -49,7 +49,7 @@ A beautiful, interactive 3D Valentine's desktop website featuring a custom Three
 
 ---
 
-## 🎬 Usage
+## Usage
 
 1. Open the website.
 2. Scroll through text and submit user information
@@ -57,27 +57,27 @@ A beautiful, interactive 3D Valentine's desktop website featuring a custom Three
 
 ---
 
-## 🎨 Styling
+## Styling
 
 Custom styles are written in `css` files found in `src\pages\[PAGE_NAME]`. Modify these files to customize UI elements, colors, or animations.
 
 ---
 
-## 🌟 Future Improvements
+## Future Improvements
 
-- Add **music** for a romantic experience 🎶
+- Add **music** for a romantic experience
 - Add **more interactions** with the 3D model
-- Improve **mobile responsiveness** 📱
+- Improve **mobile responsiveness**
 
 ---
 
-## 🎁 Credits
+## Credits
 
-- Built with 💖 by **Isaac Jiang**
+- Built with love by **David @gournii**
 - Powered by **React & Three.js**
 
 ---
 
-## 📝 License
+## License
 
 This project is open-source and available under the **MIT License**.
