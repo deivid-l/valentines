@@ -14,7 +14,7 @@ export const App: React.FC = () => {
   return (
     <div className='app-container'>
       <AnimatePresence>
-        <BrowserRouter basename={process.env.PUBLIC_URL}>
+        <BrowserRouter basename="/valentines/welcomepage">
           <Routes>
             <Route path="/" element={<WelcomePage name={name} setName={setName} />} />
             <Route path="/home/:randomUrlPart" element={<Home name={name} setName={setName} />} />

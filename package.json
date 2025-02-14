@@ -2,7 +2,7 @@
   "name": "valentine",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://<your-github-username>.github.io/<your-repo-name>/welcomepage",
+  "homepage": "https://deivid-l.github.io/valentines/welcomepage",
   "dependencies": {
     "@react-three/drei": "^9.121.4",
     "@react-three/fiber": "^8.17.14",
