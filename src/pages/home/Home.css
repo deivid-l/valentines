@@ -1,0 +1,112 @@
+.home-container {
+    display: flex;
+    font-family: "DM Sans", sans-serif;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    position: relative;
+}
+
+.spotify-container {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    text-align: left;
+}
+
+.spotify-container h2 {
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+.home-button {
+    font-family: "DM Sans", sans-serif;
+    padding: 150px 50px;
+    border-radius: 100px;
+    border: none;
+    outline: none;
+    background-color: #ffffff;
+    color: #000000;
+    font-size: 5rem;
+    cursor: pointer;
+    transition: scale 0.3s;
+    font-weight: bold;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.7);
+    /* background-image: url("https://i.postimg.cc/qMx53w1t/easymoza-LR.jpg");
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #ffffff; */
+    font-weight: 900;
+}
+
+.home-button:hover {
+    scale: 1.05;
+}
+
+@media (max-width: 768px) {
+
+    .home-container {
+        display: flex;
+        font-family: "DM Sans", sans-serif;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.1rem;
+    
+    }
+    
+    
+    .home-button {
+        font-family: "DM Sans", sans-serif;
+        width: max-content;
+        padding: 70px 50px;
+        border-radius: 50px;
+        border: none;
+        outline: none;
+        background-color: #ffffff;
+        color: #292929;
+        font-size: 2rem;
+        cursor: pointer;
+        transition: scale 0.3s;
+        font-weight: normal;
+        box-shadow: 0 30px 80px rgba(255, 255, 255, 0.7);
+    }
+    
+    .home-button:hover {
+        scale: 1.05;
+    }
+
+    .home-container {
+        font-size: 1rem;
+    }
+    .home-button {
+        padding: 1rem 2rem;
+        font-size: 1.5rem;
+    }
+    .spotify-container {
+        width: 80%;
+    }
+
+}
+.music-player {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    padding: 5px 10px;
+    z-index: 10;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    font-weight: 600;
+    transition: all 0.3 ease;
+    font-family: "DM Sans", sans-serif;
+    font-size: large;
+}
+
+.music-player:hover {
+    background-color: #ffc5e6;
+}
