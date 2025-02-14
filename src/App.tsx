@@ -10,11 +10,12 @@ import './App.css';
 
 export const App: React.FC = () => {
   const [name, setName] = useState<string>('');
+  const basename = process.env.NODE_ENV === 'production' ? '/valentines' : '';
 
   return (
     <div className='app-container'>
       <AnimatePresence>
-        <BrowserRouter basename="/valentines/welcomepage">
+        <BrowserRouter basename={basename}>
           <Routes>
             <Route path="/" element={<WelcomePage name={name} setName={setName} />} />
             <Route path="/home/:randomUrlPart" element={<Home name={name} setName={setName} />} />
